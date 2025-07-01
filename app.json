@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "assignment_inspphere",
-    "slug": "assignment_inspphere",
+    "name": "assignment_insphere",
+    "slug": "assignment_insphere",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "assignmentinspphere",
+    "scheme": "assignmentinsphere",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
