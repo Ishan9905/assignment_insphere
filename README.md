@@ -1,50 +1,175 @@
-# Welcome to your Expo app 👋
+# 🚀 Insphere Solutions - User Management System
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native-based user management tool built for Insphere's internal operations. It supports secure authentication, streamlined user creation, and dynamic user listing.
 
-## Get started
+---
 
-1. Install dependencies
+##  Getting Started
 
+### ✅ Prerequisites
+
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+- **Expo CLI**
+- **iOS Simulator** or **Android Emulator** (optional)
+
+###  Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd assignment_insphere
+   ```
+
+2. **Install Dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Add Firebase Configuration**
 
+   Create a `FirebaseConfig.ts` file and paste your Firebase credentials:
+
+   ```ts
+   // FirebaseConfig.ts
+   export const firebaseConfig = {
+     apiKey: "YOUR_API_KEY",
+     authDomain: "YOUR_AUTH_DOMAIN",
+     projectId: "YOUR_PROJECT_ID",
+     storageBucket: "YOUR_STORAGE_BUCKET",
+     messagingSenderId: "YOUR_SENDER_ID",
+     appId: "YOUR_APP_ID",
+   };
+   ```
+
+4. **Start the Development Server**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+5. **Run the App**
+   - Scan QR code with **Expo Go**
+   - Press `i` to launch iOS simulator
+   - Press `a` to launch Android emulator
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🔐 Demo Credentials
 
-## Get a fresh project
+Use these credentials to log in:
 
-When you're ready, run:
+- **Email**: `demo@insphere.com`
+- **Password**: `demo123`
 
-```bash
-npm run reset-project
+---
+
+## ✨ Features
+
+### 1. **Authentication System**
+- Secure login with email/password
+- Firebase Authentication integration
+- Real-time validation and feedback
+- Error handling and loading indicators
+
+### 2. **User Management**
+- **Add Users**:
+  - Full Name
+  - Email
+  - Phone Number
+  - Job Role
+  - Department
+  - Auto-generated timestamp
+- **View Users**:
+  - Modern card layout with avatars
+  - Search by name, email, role, or department
+  - Real-time Firestore updates
+  - Pull-to-refresh functionality
+
+### 3. **Modern UI/UX**
+- iOS-style theme
+- Responsive and accessible design
+- Navigation with Expo Router
+- Integrated icons and typography
+
+---
+
+##  Architecture Overview
+
+###  Tech Stack
+
+| Layer      | Tool                          |
+|------------|-------------------------------|
+| Frontend   | React Native + Expo           |
+| Backend    | Firebase (Auth + Firestore)   |
+| Navigation | Expo Router                   |
+| Styling    | React Native StyleSheet       |
+| Icons      | Expo Vector Icons (Ionicons)  |
+
+### 📁 Project Structure
+
+```
+assignment_insphere/
+├── app/
+│   ├── _layout.tsx         # Root layout
+│   ├── index.tsx           # Home screen
+│   ├── login.tsx           # Login screen
+│   ├── add-user.tsx        # Add user form
+│   └── show-user.tsx       # User listing
+├── FirebaseConfig.ts       # Firebase credentials
+├── package.json            # Project metadata
+└── README.md               # Project documentation
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🔄 Data Flow
 
-To learn more about developing your project with Expo, look at the following resources:
+1. **Login** → Firebase Auth → Local State → Navigation  
+2. **Add User** → Form Input → Validation → Firestore  
+3. **Show Users** → Firestore Query → Local State → Search Filter  
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+##  Component Details
 
-Join our community of developers creating universal apps.
+###  `index.tsx` (Home Screen)
+- Central navigation hub
+- Card-based layout
+- Quick access to features
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+###  `login.tsx` (Login Screen)
+- Firebase email/password login
+- Form validation and feedback
+- Password visibility toggle
+- Demo credentials display
+
+###  `add-user.tsx` (Add User Screen)
+- Input form with validation
+- Sectioned: User Info & Work Info
+- Reset form & success feedback
+
+###  `show-user.tsx` (Show Users Screen)
+- Real-time user cards from Firestore
+- Pull-to-refresh updates
+- Smart search functionality
+---
+
+##  Outcomes
+
+### ✅ Functional Requirements
+
+- [x] Firebase login system  
+- [x] Firestore user data structure  
+- [x] Show users for internal use
+- [x] Ease of use UI
+
+### ✅ Technical Goals
+
+- [x] Modular, maintainable architecture  
+- [x] Clean TypeScript implementation  
+- [x] Loading/error state management  
+- [x] Mobile-first design and UX  
+  
+
+---
+
